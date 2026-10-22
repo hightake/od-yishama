@@ -132,6 +132,11 @@ body{font-family:var(--body);color:var(--ink);-webkit-print-color-adjust:exact;p
 .tile img.fill{width:100%;height:100%;max-width:none;object-fit:cover}
 .tile:has(img.fill){padding:0}
 .tile .ph{font-family:var(--display);font-weight:700;font-size:6.6pt;color:var(--gold-hi);letter-spacing:.04em}
+.tile.duo{flex-direction:row;gap:2mm;padding:1mm 2mm}
+.tile.duo img{height:16.5mm;width:16.5mm;flex:none}
+.tile.duo div{display:flex;flex-direction:column;align-items:flex-start;gap:.8mm;text-align:right;min-width:0}
+.tile.duo b{font-family:var(--display);font-weight:900;font-size:9pt;color:#fff;line-height:1}
+.tile.duo small{font-size:6.1pt;font-weight:700;color:#ffd84a;line-height:1.25}
 .tile.zich{flex-direction:row;gap:2mm;padding:1mm 2mm}
 .tile.zich svg{width:9mm;height:9mm;flex:none}
 .tile.zich div{display:flex;flex-direction:column;align-items:flex-start;gap:.7mm;border-right:.25mm solid var(--gold-lt);padding-right:2mm;text-align:right}
@@ -272,8 +277,8 @@ body{font-family:var(--body);color:var(--ink);-webkit-print-color-adjust:exact;p
     <div class="tiles">
       <div class="tile" style="background:#0c0a12"><img src="bashi-logo.png" alt="BASHI, באשי עיצוב ארועי יוקרה" style="width:78%"><span class="ph"><span class="num">052-766-2628</span></span></div>
       <div class="tile" style="background:#0c0802"><img src="sponsors/hightake.png" alt="HIGHTAKE, אתרים, מערכות, פתרונות"></div>
-      <div class="tile" style="background:#010131"><img src="sponsors/margishim.png" alt="מרגישים בחוש, יעקב זיכרמן"></div>
-      <div class="tile" style="background:#efe6d6"><img class="fill" src="sponsors/chaniz.png" alt="Chaniz, חוויית ארוח מושלמת"></div>
+      <div class="tile duo" style="background:#010131"><img src="sponsors/margishim-mark.png" alt="מרגישים בחוש"><div><b>יעקב זיכרמן</b><small>אבחון וטיפול בויסות חושי בגישת NDFA</small></div></div>
+      <div class="tile" style="background:#f4ede0"><img src="sponsors/chaniz.svg" alt="Chaniz, חוויית ארוח מושלמת" style="height:12.5mm"><span class="ph" style="color:#5a2a2a">להזמנות <span class="num">052-7124812</span></span></div>
       <div class="tile" style="background:#f3e7db"><img class="fill" src="sponsors/point.jpg" alt="Point"></div>
       <div class="tile zich" style="background:var(--navy)">
         <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M18 108C18 56 50 20 102 12" fill="none" stroke="#fbf7ee" stroke-width="9" stroke-linecap="round"/><path d="M46 108C46 76 64 52 96 44" fill="none" stroke="#d9b86c" stroke-width="9" stroke-linecap="round"/></svg>
