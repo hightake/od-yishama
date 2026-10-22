@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3dfa8"/><stop offset=".55" stop-color="#d9b86c"/><stop offset="1" stop-color="#a8823a"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff4d2"/><stop offset="1" stop-color="#e8c77e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="none" stroke="url(#g)" stroke-width="1.6"/>
+  <circle cx="60" cy="60" r="51.5" fill="none" stroke="url(#g)" stroke-width=".6"/>
+  <!-- flame: the light that is passed on -->
+  <path d="M60 22C66.5 32 71 39 71 47.5C71 54 66 58.5 60 58.5C54 58.5 49 54 49 47.5C49 39 53.5 32 60 22Z" fill="url(#g)"/>
+  <path d="M60 36C63 41 65 44.5 65 48.5C65 51.8 62.8 54 60 54C57.2 54 55 51.8 55 48.5C55 44.5 57 41 60 36Z" fill="url(#f)"/>
+  <!-- open book: learning together -->
+  <path d="M60 90C50 84 38 83.5 26 86.5V66C38 63 50 63.5 60 69.5Z" fill="none" stroke="url(#g)" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M60 90C70 84 82 83.5 94 86.5V66C82 63 70 63.5 60 69.5Z" fill="none" stroke="url(#g)" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M60 69.5V90" stroke="url(#g)" stroke-width="1.6"/>
+  <path d="M32 71.5C40 70 48 70.5 55 73.5M32 77C40 75.5 48 76 55 79M88 71.5C80 70 72 70.5 65 73.5M88 77C80 75.5 72 76 65 79" fill="none" stroke="url(#g)" stroke-width=".9" stroke-linecap="round" opacity=".8"/>
+</svg>
