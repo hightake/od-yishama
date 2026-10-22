@@ -1,0 +1,62 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;500;700;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+:root{--navy:#14111f;--gold:#b08a3e;--ivory:#fbf7ee}
+body{margin:0;width:1600px;font-family:"Assistant",Arial,sans-serif;background:var(--ivory);color:var(--navy)}
+.opt{display:grid;grid-template-columns:120px 1fr 1fr;height:330px;border-bottom:1px solid #e3d8c2}
+.lbl{display:grid;place-items:center;font-family:"Frank Ruhl Libre",serif;font-weight:900;font-size:56px;color:var(--gold);border-left:1px solid #e3d8c2}
+.cell{display:grid;place-items:center}
+.dark{background:var(--navy);color:var(--ivory)}
+.dark .t{color:#e3c47e}
+.n{font-family:"Frank Ruhl Libre",serif;line-height:1}
+.t{font-family:"Assistant",sans-serif;font-weight:600;color:var(--gold);letter-spacing:.2em}
+
+/* A: wordmark */
+.a{display:flex;flex-direction:column;align-items:center;gap:16px}
+.a .n{font-weight:500;font-size:58px;letter-spacing:.02em}
+.a .ln{display:flex;align-items:center;gap:12px;width:100%;color:var(--gold)}
+.a .ln::before,.a .ln::after{content:"";flex:1;height:1px;background:currentColor}
+.a .ln i{width:7px;height:7px;transform:rotate(45deg);background:currentColor}
+.a .t{font-size:21px}
+
+/* B: initial in arch */
+.b{display:flex;align-items:center;gap:30px}
+.b svg{width:118px;height:150px}
+.b .tx{display:flex;flex-direction:column;gap:12px}
+.b .n{font-weight:700;font-size:50px}
+.b .t{font-size:19px}
+
+/* C: abstract arcs */
+.c{display:flex;align-items:center;gap:30px}
+.c svg{width:120px;height:120px}
+.c .tx{display:flex;flex-direction:column;gap:12px;border-right:1.5px solid var(--gold);padding-right:30px}
+.c .n{font-weight:700;font-size:50px}
+.c .t{font-size:19px}
+</style></head><body>
+
+<div class="opt">
+  <div class="lbl">א׳</div>
+  <div class="cell"><div class="a"><div class="n">אברהם שמואל זיכרמן</div><div class="ln"><i></i></div><div class="t">ליווי והכוונה לבחורים</div></div></div>
+  <div class="cell dark"><div class="a"><div class="n">אברהם שמואל זיכרמן</div><div class="ln"><i></i></div><div class="t">ליווי והכוונה לבחורים</div></div></div>
+</div>
+
+<div class="opt">
+  <div class="lbl">ב׳</div>
+  <div class="cell"><div class="b">
+    <svg viewBox="0 0 118 150"><path d="M6 146V58A53 53 0 0 1 112 58V146" fill="none" stroke="#b08a3e" stroke-width="2.5"/><text x="59" y="122" text-anchor="middle" font-family="Frank Ruhl Libre" font-weight="900" font-size="86" fill="currentColor">א</text></svg>
+    <div class="tx"><div class="n">אברהם שמואל זיכרמן</div><div class="t">ליווי והכוונה לבחורים</div></div></div></div>
+  <div class="cell dark"><div class="b">
+    <svg viewBox="0 0 118 150"><path d="M6 146V58A53 53 0 0 1 112 58V146" fill="none" stroke="#d9b86c" stroke-width="2.5"/><text x="59" y="122" text-anchor="middle" font-family="Frank Ruhl Libre" font-weight="900" font-size="86" fill="#fbf7ee">א</text></svg>
+    <div class="tx"><div class="n">אברהם שמואל זיכרמן</div><div class="t">ליווי והכוונה לבחורים</div></div></div></div>
+</div>
+
+<div class="opt">
+  <div class="lbl">ג׳</div>
+  <div class="cell"><div class="c">
+    <svg viewBox="0 0 120 120"><path d="M18 108C18 56 50 20 102 12" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><path d="M46 108C46 76 64 52 96 44" fill="none" stroke="#b08a3e" stroke-width="9" stroke-linecap="round"/></svg>
+    <div class="tx"><div class="n">אברהם שמואל זיכרמן</div><div class="t">ליווי והכוונה לבחורים</div></div></div></div>
+  <div class="cell dark"><div class="c">
+    <svg viewBox="0 0 120 120"><path d="M18 108C18 56 50 20 102 12" fill="none" stroke="#fbf7ee" stroke-width="9" stroke-linecap="round"/><path d="M46 108C46 76 64 52 96 44" fill="none" stroke="#d9b86c" stroke-width="9" stroke-linecap="round"/></svg>
+    <div class="tx"><div class="n">אברהם שמואל זיכרמן</div><div class="t">ליווי והכוונה לבחורים</div></div></div></div>
+</div>
+</body></html>
