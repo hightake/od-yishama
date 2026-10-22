@@ -11,26 +11,21 @@
 .sheet{width:420mm;height:594mm;display:flex;flex-direction:column}
 .frame{inset:14mm;border-width:1mm;z-index:3}
 .frame::after{inset:3.2mm;border-width:.35mm}
-.top{display:grid;grid-template-columns:1fr 168mm;height:338mm}
-.head{padding:44mm 30mm 0 6mm;display:flex;flex-direction:column;gap:6mm;z-index:2}
+.top{display:grid;grid-template-columns:1fr 178mm;height:330mm}
+.head{padding:44mm 30mm 0 10mm;display:flex;flex-direction:column;gap:6mm;z-index:2}
 .head .k{font-family:var(--display);font-weight:900;font-size:118pt;line-height:.95;color:var(--ivory)}
 .head .k span{color:var(--gold-hi)}
-.head h1{font-family:var(--display);font-weight:900;font-size:96pt;line-height:1;margin:6mm 0 0}
+.head h1{font-family:var(--display);font-weight:900;font-size:104pt;line-height:1;margin:6mm 0 0}
 .head .bar{width:120mm;height:2mm;background:linear-gradient(90deg,var(--gold-lt),transparent);margin:5mm 0 2mm}
 .head p{margin:0;font-family:var(--display);font-weight:700;font-size:46pt;line-height:1.3;color:var(--ivory)}
-.portrait{position:relative;margin:24mm 24mm 0 0;border-radius:84mm 84mm 0 0;overflow:hidden;
-  background:radial-gradient(ellipse at 50% 35%,#3a3150,#1a1528 75%);border:1mm solid var(--gold-lt);border-bottom:0}
-.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.portrait .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:var(--display);font-size:24pt;color:rgba(243,223,168,.55);padding:20mm}
+.portrait{position:relative;margin:30mm 0 0 30mm;border-radius:84mm 84mm 0 0;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 38%,#f6eedd,#e6d8bc 80%);border:1mm solid var(--gold-lt);border-bottom:0}
+.portrait img{position:absolute;left:50%;bottom:6mm;width:118%;max-width:none;transform:translateX(-50%)}
 .portrait::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(0deg,var(--navy),transparent)}
 .cap{position:absolute;bottom:10mm;left:0;right:0;text-align:center;z-index:2;font-family:var(--display);font-weight:700;font-size:26pt;color:var(--gold-hi)}
-.quote{margin:0 30mm;padding:14mm 18mm 12mm;border-top:.8mm solid var(--gold-lt);border-bottom:.8mm solid var(--gold-lt);position:relative;z-index:2}
-.quote blockquote{margin:0;font-family:var(--display);font-weight:500;font-size:39pt;line-height:1.45;text-align:justify;color:var(--ivory)}
-.quote blockquote b{color:var(--gold-hi);font-weight:900}
-.quote cite{display:block;margin-top:5mm;font-style:normal;font-weight:700;font-size:20pt;color:var(--gold-lt);text-align:left}
-.also{margin:14mm 30mm 0;text-align:center;font-family:var(--display);font-size:44pt;line-height:1.35;color:var(--ivory)}
-.also b{color:var(--gold-hi)}
-.also small{display:block;font-family:var(--body);font-weight:700;font-size:18pt;color:var(--gold-lt);margin-top:2mm}
+.src{margin:16mm 30mm 0;padding:14mm 0 12mm;border-top:.8mm solid var(--gold-lt);border-bottom:.8mm solid var(--gold-lt);text-align:center;position:relative;z-index:2}
+.src .line{font-family:var(--display);font-weight:900;font-size:104pt;line-height:1.12}
+.src cite{display:block;margin-top:6mm;font-style:normal;font-family:var(--display);font-weight:700;font-size:40pt;color:var(--ivory)}
 .foot{margin-top:auto;padding:0 30mm 26mm;display:flex;align-items:center;justify-content:center;gap:10mm}
 .foot img{width:125mm}
 .foot div{font-family:var(--display);font-weight:700;font-size:34pt;line-height:1.35;color:var(--ivory);border-right:.8mm solid var(--gold-lt);padding-right:10mm}
@@ -45,21 +40,17 @@
       <div class="k"><span>הרמב״ם</span><br>פסק:</div>
       <h1 class="goldtext">הצדקה הגדולה ביותר!</h1>
       <div class="bar"></div>
-      <p>לחזק את ידו של יהודי עוד לפני שיצטרך לבריות</p>
     </div>
     <div class="portrait">
-      <div class="ph">כאן תיכנס<br>תמונת הרמב״ם</div>
-      <!-- <img src="assets/rambam.jpg" alt="הרמב״ם"> -->
+      <img src="assets/rambam.svg" alt="הרמב״ם">
       <div class="cap">רבינו משה בן מימון זי״ע</div>
     </div>
   </div>
 
-  <div class="quote">
-    <blockquote>״שמונה מעלות יש בצדקה זו למעלה מזו. <b>מעלה גדולה שאין למעלה ממנה</b>, זה המחזיק ביד ישראל שמך ונותן לו מתנה או הלוואה, או עושה עמו שותפות, או ממציא לו מלאכה, <b>כדי לחזק את ידו עד שלא יצטרך לבריות לשאול</b>.״</blockquote>
-    <cite>רמב״ם, הלכות מתנות עניים, פרק י׳ הלכה ז׳</cite>
+  <div class="src">
+    <div class="line goldtext">״עני שהוא קרובו<br>קודם לכל אדם״</div>
+    <cite>(מתנות עניים ז, יג)</cite>
   </div>
-
-  <div class="also">ועוד פסק: <b>״עני שהוא קרובו, קודם לכל אדם״</b><small>שם, פרק ז׳ הלכה י״ג</small></div>
 
   <div class="foot">
     <img src="assets/od-logo-hires.png" alt="קופת הצדקה עוד ישמע">
