@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>לוגו עוד ישמע A4</title>
+<link rel="stylesheet" href="base.css">
+<style>
+/* Layout: A4 landscape, the logo alone, as large as the page allows, on the midnight ground with a fine gold frame */
+@page{size:297mm 210mm;margin:0}
+.sheet{width:297mm;height:210mm;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 42%,#2a2340 0%,var(--navy) 72%)}
+.frame{inset:7mm;border-width:.5mm}
+.frame::after{inset:1.6mm;border-width:.2mm}
+img{width:262mm;filter:drop-shadow(0 0 8mm rgba(217,184,108,.22))}
+</style>
+</head>
+<body>
+<section class="sheet"><div class="frame"></div><img src="assets/od-logo-hires.png" alt="קופת הצדקה עוד ישמע שע״י קרן השמחות משפחת זיכרמן"></section>
+</body>
+</html>

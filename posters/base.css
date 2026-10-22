@@ -1,0 +1,19 @@
+/* Shared poster system: midnight + candle gold, the same tokens as the leaflet and films */
+:root{
+  --navy:#14111f; --navy-2:#221c33; --gold:#b08a3e; --gold-lt:#d9b86c; --gold-hi:#f3dfa8;
+  --ivory:#fbf7ee; --soft:#d8cfbf;
+  --display:"Frank Ruhl Libre","David","Times New Roman",serif;
+  --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#666}
+body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-family:var(--body);color:var(--ivory)}
+.sheet{position:relative;overflow:hidden;margin:0 auto;page-break-after:always;break-after:page;
+  background:radial-gradient(ellipse at 50% 30%,var(--navy-2) 0%,var(--navy) 70%)}
+@media screen{.sheet{margin:10mm auto;box-shadow:0 4mm 14mm rgba(0,0,0,.4)}}
+.frame{position:absolute;border:solid var(--gold-lt);pointer-events:none}
+.frame::after{content:"";position:absolute;border:solid rgba(217,184,108,.55)}
+.num{unicode-bidi:isolate;direction:ltr;display:inline-block}
+.goldtext{color:var(--gold-hi);text-shadow:0 .4mm 0 #9c7a3c,0 0 6mm rgba(217,184,108,.25)}
+.orn{display:flex;align-items:center;justify-content:center;color:var(--gold-lt)}
+.orn::before,.orn::after{content:"";height:.3mm;background:currentColor}

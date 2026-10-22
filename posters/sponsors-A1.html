@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>נותני החסות A1</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Assistant:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="base.css">
+<style>
+/* Layout: A1 portrait. Logo and thank-you headline on top, six equal sponsor plaques in a 2x3 grid, motto at the foot */
+@page{size:594mm 841mm;margin:0}
+.sheet{width:594mm;height:841mm;display:flex;flex-direction:column;align-items:center;padding:44mm 52mm 46mm;text-align:center}
+.frame{inset:20mm;border-width:1.4mm}
+.frame::after{inset:4.5mm;border-width:.5mm}
+.logo{width:250mm}
+.kicker{font-weight:800;letter-spacing:.2em;color:var(--gold-lt);font-size:40pt;margin-top:8mm}
+h1{font-family:var(--display);font-weight:900;font-size:150pt;line-height:1;margin:6mm 0 0}
+h2{font-family:var(--display);font-weight:700;font-size:72pt;line-height:1.1;margin:4mm 0 0;color:var(--ivory)}
+.orn{gap:7mm;margin:14mm 0 16mm}
+.orn::before,.orn::after{width:90mm;height:.6mm}
+.orn svg{width:11mm;height:11mm}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:14mm;width:100%;flex:1}
+.tile{border:.9mm solid var(--gold-lt);border-radius:5mm;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5mm;padding:12mm;
+  box-shadow:0 6mm 18mm rgba(0,0,0,.45)}
+.tile .ph{font-family:var(--display);font-weight:900;font-size:44pt;letter-spacing:.04em;color:var(--gold-hi)}
+.tile .tag{font-weight:700;font-size:28pt;color:#f1ece4}
+.duo,.zich{flex-direction:row;gap:9mm}
+.duo img{height:88mm;width:88mm;flex:none}
+.duo div,.zich div{display:flex;flex-direction:column;align-items:flex-start;gap:4mm;text-align:right}
+.duo b{font-family:var(--display);font-weight:900;font-size:52pt;color:#fff;line-height:1}
+.duo small{font-weight:800;font-size:27pt;color:#ffd84a;line-height:1.25}
+.zich svg{width:54mm;height:54mm;flex:none}
+.zich div{border-right:1.2mm solid var(--gold-lt);padding-right:12mm}
+.zich b{font-family:var(--display);font-weight:700;font-size:44pt;color:var(--ivory);line-height:1;white-space:nowrap}
+.zich small{font-weight:700;font-size:26pt;color:var(--gold-lt);letter-spacing:.06em;white-space:nowrap}
+.foot{margin-top:16mm;display:flex;flex-direction:column;gap:4mm}
+.foot p{margin:0;font-size:32pt;color:var(--soft)}
+.foot .motto{font-family:var(--display);font-weight:700;font-size:50pt;color:var(--gold-hi)}
+</style>
+</head>
+<body>
+<section class="sheet">
+  <div class="frame"></div>
+  <img class="logo" src="assets/od-logo-hires.png" alt="קופת הצדקה עוד ישמע">
+  <div class="kicker">דינר שש שנים · קופת עוד ישמע</div>
+  <h1 class="goldtext">התודה והברכה</h1>
+  <h2>לנותני החסות לערב זה</h2>
+  <div class="orn"><svg viewBox="0 0 20 20"><path d="M10 0C10.8 7 13 9.2 20 10C13 10.8 10.8 13 10 20C9.2 13 7 10.8 0 10C7 9.2 9.2 7 10 0Z" fill="currentColor"/></svg></div>
+
+  <div class="tiles">
+    <div class="tile" style="background:#0c0a12"><img src="assets/bashi.svg" alt="BASHI, באשי עיצוב ארועי יוקרה" style="width:82%"><span class="ph"><span class="num">052-766-2628</span></span></div>
+    <div class="tile" style="background:#0c0802"><img src="assets/hightake.svg" alt="HIGHTAKE" style="width:86%"><span class="tag">אתרים, מערכות, פתרונות. בדיוק כמו שצריך</span></div>
+    <div class="tile duo" style="background:#010131"><img src="assets/margishim-mark.png" alt="מרגישים בחוש"><div><b>יעקב זיכרמן</b><small>אבחון וטיפול בויסות חושי<br>בגישת NDFA</small></div></div>
+    <div class="tile" style="background:#f4ede0"><img src="assets/chaniz.svg" alt="Chaniz, חוויית ארוח מושלמת" style="width:84%"><span class="ph" style="color:#5a2a2a">להזמנות <span class="num">052-7124812</span></span></div>
+    <div class="tile" style="background:#f3e7db"><img src="assets/point.svg" alt="Point 025001268" style="width:80%"></div>
+    <div class="tile zich" style="background:var(--navy)">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M18 108C18 56 50 20 102 12" fill="none" stroke="#fbf7ee" stroke-width="9" stroke-linecap="round"/><path d="M46 108C46 76 64 52 96 44" fill="none" stroke="#d9b86c" stroke-width="9" stroke-linecap="round"/></svg>
+      <div><b>אברהם שמואל זיכרמן</b><small>ליווי והכוונה לבחורים</small></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>על הלב, הנשמה והמימון הנדיב, שבזכותם נראה הערב כפי שהוא נראה</p>
+    <div class="motto">״מיר זענען אלע א חלק פון די שמחה״</div>
+  </div>
+</section>
+</body>
+</html>
