@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>כרטיסי מקום עוד ישמע</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@600;700&display=swap">
+<style>
+/* Layout: tent cards, 95x120mm flat, folded to a 95x60mm face; 4 per A4 sheet. Top face is upside down so the name reads from both sides */
+:root{
+  --navy:#14111f;
+  --gold:#b08a3e;
+  --gold-lt:#d9b86c;
+  --ivory:#fbf7ee;
+  --muted:#7a6f5f;
+  --display:"Frank Ruhl Libre","David","Times New Roman",serif;
+  --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+}
+@page{size:210mm 297mm;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;background:#888}
+body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-family:var(--body)}
+.sheet{width:210mm;height:297mm;position:relative;background:#fff;page-break-after:always;break-after:page;margin:0 auto;
+  display:grid;grid-template-columns:repeat(2,95mm);grid-template-rows:repeat(2,120mm);justify-content:center;align-content:center}
+@media screen{.sheet{margin:8mm auto;box-shadow:0 4mm 12mm rgba(0,0,0,.35)}}
+.card{position:relative;outline:.15mm dashed #c9c1b2}
+.card::after{content:"";position:absolute;left:0;right:0;top:60mm;border-top:.15mm dotted #d5cdbd}
+.face{height:60mm;position:relative;background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4mm 7mm 4.2mm;text-align:center}
+.face.top{transform:rotate(180deg)}
+.face .fr{position:absolute;inset:3mm;border:.3mm solid var(--gold)}
+.face .fr::after{content:"";position:absolute;inset:.9mm;border:.12mm solid var(--gold)}
+.face img{width:31mm;margin-top:-1mm}
+.name{font-family:var(--display);font-weight:900;color:var(--navy);line-height:1.1;white-space:nowrap;margin-top:1.6mm}
+.orn{display:flex;align-items:center;gap:1.8mm;color:var(--gold);margin-top:1.4mm}
+.orn::before,.orn::after{content:"";width:12mm;height:.2mm;background:var(--gold)}
+.orn svg{width:2.4mm;height:2.4mm}
+.foot{font-weight:700;font-size:6.2pt;letter-spacing:.14em;color:var(--muted);margin-top:1.2mm}
+</style>
+</head>
+<body>
+<div id="out"></div>
+<script>
+const NAMES = [
+  'ראש משפחתינו ותפארתינו', 'יוסף פויגל', 'משה ברוך זיכרמן', 'משה קאצבורג', 'שלמה לוי', 'יהודה יצחק זיכרמן',
+  'שלמה זיכרמן', 'חיים זיכרמן', 'אברהם שמואל זיכרמן', 'הערשל הורוביץ', 'יענקב זיכרמן', 'יהושע דוד זיכרמן',
+  'יוסף אריה זיכרמן', 'מרדכי הרשקוביץ', 'אלימלך גרוסמאן', 'ישעייה זיכרמן', 'משה לאנגסאם', 'משה פנט',
+  'שלמה פויגל', 'ברוך פויגל', 'חיים שלום יעקבוביץ', 'הערשי זיכרמן', 'יעקב ברמ״ב זיכרמן', 'שלום פויגל',
+  'שמחה בונים אויש', 'שלמה הכהן קאצבורג', 'יצחק אהרן שארף', 'שמואל לפקוביץ', 'שמחה מערלין', 'יענקי לוי',
+  'שמשון וועטנשטיין'
+];
+const STAR = '<svg viewBox="0 0 20 20"><path d="M10 0C10.8 7 13 9.2 20 10C13 10.8 10.8 13 10 20C9.2 13 7 10.8 0 10C7 9.2 9.2 7 10 0Z" fill="currentColor"/></svg>';
+const face = (n, cls) => `<div class="face ${cls}"><div class="fr"></div><img src="od-logo.webp" alt=""><div class="name">${n}</div><div class="orn">${STAR}</div><div class="foot">דינר שש שנים · קופת עוד ישמע</div></div>`;
+let html = '';
+for (let i = 0; i < NAMES.length; i += 4) {
+  html += '<section class="sheet">' + NAMES.slice(i, i + 4).map(n => `<div class="card">${face(n, 'top')}${face(n, 'bottom')}</div>`).join('') + '</section>';
+}
+document.getElementById('out').innerHTML = html;
+// size each name to fill the face width without overflowing
+document.fonts.ready.then(() => {
+  document.querySelectorAll('.name').forEach(el => {
+    let pt = 24; el.style.fontSize = pt + 'pt';
+    const max = el.parentElement.clientWidth - 2 * 50;
+    while (el.scrollWidth > max && pt > 12) { pt -= 0.5; el.style.fontSize = pt + 'pt'; }
+  });
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>
