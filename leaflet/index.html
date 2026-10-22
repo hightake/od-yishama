@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>עלון עוד ישמע</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: A5 booklet, 4 pages. Cover and back band in midnight + gold; inner pages on ivory stock with gold rules */
+:root{
+  --navy:#14111f;
+  --navy-2:#221c33;
+  --gold:#b08a3e;
+  --gold-lt:#d9b86c;
+  --gold-hi:#f3dfa8;
+  --ink:#231d2b;
+  --ivory:#fbf7ee;
+  --muted:#6f6556;
+  --display:"Frank Ruhl Libre","David","Times New Roman",serif;
+  --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+}
+@page{size:148mm 210mm;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;background:#888}
+body{font-family:var(--body);color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:148mm;height:210mm;position:relative;overflow:hidden;background:var(--ivory);page-break-after:always;break-after:page;margin:0 auto}
+@media screen{.page{margin:8mm auto;box-shadow:0 4mm 12mm rgba(0,0,0,.35)}}
+.num{unicode-bidi:isolate;direction:ltr;display:inline-block}
+
+/* ornaments */
+.frame{position:absolute;inset:6mm;border:.35mm solid var(--gold);pointer-events:none}
+.frame::after{content:"";position:absolute;inset:1.2mm;border:.15mm solid var(--gold)}
+.rule{height:.3mm;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto}
+.orn{display:flex;align-items:center;justify-content:center;gap:2.5mm;color:var(--gold)}
+.orn::before,.orn::after{content:"";height:.25mm;width:16mm;background:var(--gold)}
+.orn svg{width:3.4mm;height:3.4mm}
+.kicker{font-weight:800;letter-spacing:.14em;color:var(--gold);font-size:7.6pt}
+.bsd{position:absolute;top:9.5mm;right:11mm;font-family:var(--display);font-size:7.5pt;color:var(--muted)}
+
+/* ---------- page 1: cover ---------- */
+.cover{background:radial-gradient(ellipse at 50% 32%,var(--navy-2) 0%,var(--navy) 72%);color:var(--ivory);
+  display:flex;flex-direction:column;align-items:center;text-align:center;padding:17mm 14mm 13mm}
+.cover .frame{border-color:var(--gold-lt)} .cover .frame::after{border-color:rgba(217,184,108,.55)}
+.cover .bsd{color:var(--gold-lt)}
+.cover .kicker{color:var(--gold-lt)}
+.cover .logo{width:110mm;margin-top:5mm;filter:drop-shadow(0 0 5mm rgba(217,184,108,.25))}
+.cover h1{font-family:var(--display);font-weight:900;font-size:28pt;line-height:1.05;margin:4mm 0 1.5mm;color:var(--gold-hi)}
+.cover .motto{font-family:var(--display);font-weight:700;font-size:17pt;line-height:1.3;color:var(--ivory);margin:3mm 0 0}
+.cover .motto small{display:block;font-family:var(--body);font-weight:600;font-size:7.5pt;color:var(--gold-lt);letter-spacing:.12em;margin-bottom:1.5mm}
+.cover .stats{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);width:100%;border-top:.25mm solid rgba(217,184,108,.6);border-bottom:.25mm solid rgba(217,184,108,.6)}
+.cover .stats div{padding:3mm 1mm;display:flex;flex-direction:column;gap:.6mm}
+.cover .stats div+div{border-right:.25mm solid rgba(217,184,108,.35)}
+.cover .stats b{font-family:var(--display);font-weight:900;font-size:17pt;color:var(--gold-hi);line-height:1}
+.cover .stats div > span{font-size:7.4pt;color:#d8cfbf}
+.cover .verse{font-family:var(--display);font-size:8.6pt;line-height:1.55;color:#d8cfbf;margin:4mm 0 0}
+.cover .verse b{color:var(--gold-hi);font-weight:700}
+
+/* ---------- page 2: article ---------- */
+.article{padding:15mm 12.5mm 12mm}
+.article header{text-align:center;margin-bottom:3.2mm}
+.article .dateline{font-family:var(--display);font-size:8pt;color:var(--muted);margin:0 0 1.5mm}
+.article h2{font-family:var(--display);font-weight:900;font-size:16.5pt;margin:0;color:var(--navy);line-height:1.1}
+.article .lead{font-family:var(--display);font-style:normal;font-weight:500;font-size:9.4pt;color:var(--gold);margin:1.8mm 0 2.4mm}
+.cols{column-count:2;column-gap:5.5mm;column-rule:.15mm solid rgba(176,138,62,.45);font-family:var(--display);font-size:8.25pt;line-height:1.48;text-align:justify;hyphens:none}
+.cols p{margin:0 0 1.7mm}
+.cols p:first-child::first-letter{float:right;font-weight:900;font-size:26pt;line-height:.9;color:var(--gold);margin:.6mm 0 0 1.4mm}
+.pull{break-inside:avoid;margin:2mm 0 2.4mm;padding:2.4mm 0;border-top:.3mm solid var(--gold);border-bottom:.3mm solid var(--gold);
+  font-family:var(--display);font-weight:700;font-size:10.4pt;line-height:1.3;color:var(--navy);text-align:center}
+.cols .q{font-weight:700;color:var(--navy)}
+
+/* ---------- page 3: the story in numbers ---------- */
+.story{padding:15mm 12.5mm 12mm;display:flex;flex-direction:column;gap:4.2mm}
+.story header{text-align:center}
+.story h2{font-family:var(--display);font-weight:900;font-size:21pt;margin:1mm 0 0;color:var(--navy);line-height:1.05}
+.story .intro{font-family:var(--display);font-size:9pt;line-height:1.5;text-align:center;color:var(--ink);margin:1.6mm auto 0;max-width:108mm}
+.start{display:grid;grid-template-columns:1fr auto;align-items:center;gap:3mm;background:var(--navy);color:var(--ivory);border-radius:1.6mm;padding:3.2mm 4.5mm}
+.start .t{font-family:var(--display);font-size:9pt;line-height:1.4}
+.start .t b{display:block;font-size:10.6pt;color:var(--gold-hi);margin-bottom:.4mm}
+.start .v{font-family:var(--display);font-weight:900;font-size:19pt;color:var(--gold-hi);white-space:nowrap;text-align:left;line-height:1}
+.start .v small{display:block;font-family:var(--body);font-weight:600;font-size:6.8pt;color:#d8cfbf;text-align:center;margin-top:.8mm}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:.3mm solid var(--gold)}
+.grid div{padding:3.4mm 1.4mm 3.2mm;text-align:center;border-bottom:.2mm solid rgba(176,138,62,.45)}
+.grid div:not(:nth-child(3n+1)){border-right:.2mm solid rgba(176,138,62,.45)}
+.grid b{display:block;font-family:var(--display);font-weight:900;font-size:15pt;color:var(--navy);line-height:1;white-space:nowrap}
+.grid b em{font-style:normal;font-size:.62em;margin-inline-start:.6mm;color:var(--gold)}
+.grid div > span{display:block;font-size:7pt;color:var(--muted);margin-top:1mm;line-height:1.3}
+.grid .hl b{color:var(--gold)}
+.honor{display:flex;flex-direction:column;gap:1.6mm}
+.honor h3{font-family:var(--display);font-weight:900;font-size:11.5pt;color:var(--navy);margin:0;text-align:center}
+.honor ol{list-style:none;margin:0;padding:0;columns:2;column-gap:5mm;column-rule:.15mm solid rgba(176,138,62,.45)}
+.honor li{display:grid;grid-template-columns:4.2mm 1fr auto;gap:1mm;align-items:baseline;font-size:8.4pt;padding:1.1mm 0;border-bottom:.15mm dotted rgba(176,138,62,.6);break-inside:avoid}
+.honor li i{font-style:normal;font-family:var(--display);font-weight:700;color:var(--gold)}
+.honor li > span{font-weight:600}
+.honor li b{font-family:var(--display);font-weight:700;color:var(--navy);white-space:nowrap}
+.rings{display:flex;justify-content:center;gap:1.6mm;color:var(--gold);margin-top:auto}
+.rings svg{width:5.4mm;height:6.5mm}
+.story .foot{text-align:center;font-family:var(--display);font-size:9.6pt;color:var(--navy);font-weight:700}
+.story .foot small{display:block;font-weight:400;font-size:7.6pt;color:var(--muted);margin-top:.6mm}
+
+/* ---------- page 4: the future ---------- */
+.future{padding:0;display:flex;flex-direction:column}
+.future .top{flex:1;padding:15mm 12.5mm 5mm;display:flex;flex-direction:column;justify-content:space-between;gap:3mm}
+.future header{text-align:center}
+.future h2{font-family:var(--display);font-weight:900;font-size:21pt;margin:1mm 0 0;color:var(--navy);line-height:1.05}
+.calc{border:.3mm solid var(--gold);border-radius:1.6mm;padding:2.6mm 4mm}
+.calc .ln{display:grid;grid-template-columns:1fr auto;gap:3mm;align-items:baseline;padding:1.3mm 0;border-bottom:.15mm dotted rgba(176,138,62,.7);font-size:8.6pt}
+.calc .ln b{font-family:var(--display);font-weight:900;font-size:11pt;color:var(--navy);white-space:nowrap}
+.calc .ln.sum{border:0;padding-top:2mm}
+.calc .ln.sum span{font-family:var(--display);font-weight:700;font-size:10pt}
+.calc .ln.sum b{font-size:16pt;color:var(--gold)}
+.leap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2mm;text-align:center;background:var(--navy);color:var(--ivory);border-radius:1.6mm;padding:3mm 3mm}
+.leap b{display:block;font-family:var(--display);font-weight:900;font-size:16pt;color:var(--gold-hi);line-height:1;white-space:nowrap}
+.leap div > span{font-size:7pt;color:#d8cfbf}
+.leap .arrow{font-family:var(--display);font-size:16pt;color:var(--gold-lt)}
+.goal{text-align:center}
+.goal p{margin:0;font-family:var(--display);font-size:9pt;color:var(--muted)}
+.goal b{display:block;font-family:var(--display);font-weight:900;font-size:22pt;color:var(--navy);line-height:1.1}
+.goal b em{font-style:normal;color:var(--gold)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm}
+.plan{border-top:.6mm solid var(--gold);background:#f3ecdc;padding:2.4mm 2mm 2.6mm;text-align:center;display:flex;flex-direction:column;gap:.8mm}
+.plan i{font-style:normal;font-family:var(--display);font-weight:900;color:var(--gold);font-size:9pt}
+.plan b{font-family:var(--display);font-weight:700;font-size:8.8pt;line-height:1.25;color:var(--navy)}
+.plan > span{font-size:6.8pt;color:var(--muted);line-height:1.3}
+.records{text-align:center;font-family:var(--display);font-weight:900;font-size:13pt;color:var(--gold);margin:.5mm 0 0}
+.sponsor{background:radial-gradient(ellipse at 50% 0%,var(--navy-2),var(--navy) 80%);color:var(--ivory);padding:4.5mm 12mm 7.5mm;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.4mm}
+.sponsor .kicker{color:var(--gold-lt)}
+.sponsor h3{font-family:var(--display);font-weight:900;font-size:13pt;margin:0;color:var(--gold-hi)}
+.sponsor p{margin:0;font-size:7.4pt;color:#d8cfbf;line-height:1.4;max-width:110mm}
+.sponsor img{width:42mm;margin-top:.6mm}
+.sponsor .tel{font-family:var(--display);font-weight:900;font-size:12pt;color:var(--gold-hi);letter-spacing:.03em}
+.sponsor .tel small{font-family:var(--body);font-weight:600;font-size:7pt;color:#d8cfbf;letter-spacing:0;margin-inline-end:1.5mm}
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 · COVER ================= -->
+<section class="page cover">
+  <div class="frame"></div>
+  <div class="bsd">בס״ד</div>
+  <div class="kicker">דינר שש שנים · תשפ״ז</div>
+  <img class="logo" src="od-logo.webp" alt="קופת הצדקה עוד ישמע שע״י קרן השמחות משפחת זיכרמן">
+  <h1>שש שנים של נתינה</h1>
+  <div class="orn"><svg viewBox="0 0 20 20"><path d="M10 0C10.8 7 13 9.2 20 10C13 10.8 10.8 13 10 20C9.2 13 7 10.8 0 10C7 9.2 9.2 7 10 0Z" fill="currentColor"/></svg></div>
+  <p class="motto"><small>המוטו שלנו</small>״מיר זענען אלע א חלק<br>פון די שמחה״</p>
+  <p class="verse">עוד ישמע בערי יהודה ובחוצות ירושלים<br>קול ששון וקול שמחה <b>קול חתן וקול כלה</b></p>
+  <div class="stats">
+    <div><b><span class="num">15</span></b><span>חתונות</span></div>
+    <div><b><span class="num">150,000</span></b><span>₪ חולקו לשמחות</span></div>
+    <div><b><span class="num">6</span></b><span>שנים של נתינה</span></div>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 · ARTICLE ================= -->
+<section class="page article">
+  <div class="bsd">בס״ד</div>
+  <header>
+    <p class="dateline">מוצ״ש לך לך · לסדר ״איש את רעהו יעזורו ולאחיו יאמר חזק!״</p>
+    <h2>הנה מה טוב ומה נעים שבת אחים גם יחד</h2>
+    <p class="lead">אל אחי ורעי אשיחה נא דבר אשר עם לבבי, אדברה וירווח לי</p>
+    <div class="rule" style="width:40mm"></div>
+  </header>
+  <div class="cols">
+    <p>מעשה בחסיד אחד אשר ידיו רב לו בכל מיני "עסקנות" של מצוה למיניהם, עסוק בצרכי ציבור ואוהב חסד, הולך הוא ברחובה של עיר בדרכו לעוד איזה צורך הרבים...</p>
+    <p>ולפתע עיניו החדות קולטות בקצה הרחוב אישה אחת הולכת לאיטה, עמוסה בחבילות ושקיות עד להתפקע, גונחת מכובד המשא ומתאמצת בדרכה על כל פסיעה...</p>
+    <p>והוא כאיש חסד בכל לבו ונפשו אשר לבו ער לכל הדורש עזרה, באינסטינקט של שני' מחליט שאין מעבירין על המצוות, העסקנות הציבורית עוד תסתדר איכשהו על ידי עוד כמה אוהבי חסד כמוהו...</p>
+    <p>אבל מי יעזור לענייה זו ברחובה של עיר? באבירות לב מסיט הוא את דרכו לכיוונה, שמח וטוב לב על המצווה שנפלה בחלקו כמעט מבלי משים.</p>
+    <p>כמעט שהתקרב אליה, והנה שומע הוא את קולה, קול מוכר עד למאוד, באמרה אליו: <span class="q">'מה לך אישי היקר כי נחפזת היום לעזרני? מה יום מיומיים?...'</span></p>
+    <p>ויפלו פני החסיד דנן, בראותו כי נתמסמסה לו מצוותו הנכבדה מבין קשרי אצבעותיו, ויפטר אליה בשפה רפה: 'סלחי נא לי אשתי היקרה על שאין בי עתה זמן לעזרך, הן עסוק אני בצרכי ציבור, ומצוות גדולות וטורח הרבים עוברות על ידי, ואת, יהא ה' בעזרך שתצליחי להיסחב עם כל חבילותייך...'</p>
+    <p>ברוך ה' נתברכנו בקהילתנו הקדושה והמעטירה, בכל מיני מצוות גדולות וארגונים נכבדים הפועלים גדולות ונצורות. האחת תומכת בנזקקים ומעמידם על רגליהם, ומביאה רווחה לכלל אנשי שלומנו, השני' בונה בניינים ותומכת באברכים וישיבות, ממש עמוד התורה! חברתה מעלה נשמות מבאר שחת ומקרבת אלפים ליראת ה', עוד ארגון עוזר דלים והשני סומך נופלים, אחת לחתונות ואחת לבר מצוות וכו' וכו'...</p>
+    <p>ולא עוד אלא, שכל אחת מוכרת מרכולתה: לאחת יש מכתב ברור מכ"ק מר"ש, ולחברתה זוהר בפר' תרומה, לזאת יש את מכתב הרבנים ולאחרת את כל ספרי הצדיקים.</p>
+    <p>ולא עוד אלא שבזכות כל אלו הקופות, יש לנו שטר זכאי ודבש לר"ה ונר החיים ליו"כ, הושענות לסוכות ומצות לליל הסדר, שמן זית לחנוכה והמן טאשן לפורים, הזכרות בכל קברי רבותינו וקוויטלעך בכל עת רצון, בער"ח ועריו"כ, בזאת חנוכה ובשושן פורים. ברוך ה', תודה לקל...</p>
+    <p>ולא עוד אלא שלכל ארגון וחבורה קדושה יש לה את ה"מגבית" הגדולה ואת ה"אסטרטגיה" המפואר, אשר בתבונות כפיו ינחם איך להרבות פעלים לתורה ולצדקה.</p>
+    <div class="pull">ועתה קמה לה וגם נצבה קופתנו המשפחתית כננס בין ענקים</div>
+    <p>ותמהין ושיילין ליה: הלזאת צדקה יקרא?! איזה בנין בניתם? או שמא חילצתם נפש משאול? ואולי העמדתם כמה משפחות על דרך המלך? איזה סגולה יש לכם להציע? ואיזו שם הבנין יש באמתחתכם? כלום יש לכם יין לד' כוסות או ערבה לד' מינים? כלום יש לכם ברכת הקודש ממרן המחנ"ח זי"ע, או שמא ואולי הזכרה על ציונו של הסמיכת חכמים? והלא אפי' שם ולוגו לקמפיין אין, והאיך אפשר לצאת ידי חובת צדקה באופן כזה?...</p>
+    <p>אף אנו נשיב ונאמר לו, כי יש לנו ברכת התורה, כמש"כ בספר תורת משה הנתונה למשה רבינו מפי הגבורה בערבות מואב, ושם נאמר: <span class="q">כי יהי' בך אביון מאחד אחיך</span> וגו', ודרשו רבותינו: אחיך קודם לכל אדם. ובהמשך הפרשה: <span class="q">נתן תתן לו</span> וגו', <span class="q">כי בגלל הדבר הזה יברכך ה' אלוקיך בכל מעשיך ובכל משלח ידך.</span></p>
+    <p>ושנוי בנביאים: <span class="q">הלא פרוס לרעב לחמך</span> וגו', <span class="q">ומבשרך אל תתעלם. אז יבקע כשחר אורך וארכתך מהרה תצמח, והלך לפניך צדקך כבוד ה' יאספך. אז תקרא וה' יענה, תשוע ויאמר הנני, אם תסיר מתוכך מוטה</span> וגו'.</p>
+  </div>
+</section>
+
+<!-- ================= PAGE 3 · THE STORY IN NUMBERS ================= -->
+<section class="page story">
+  <div class="bsd">בס״ד</div>
+  <header>
+    <div class="kicker">ככה התחיל הסיפור</div>
+    <h2>משפחה אחת, שולחן אחד</h2>
+    <p class="intro">לפני שש שנים בדיוק התכנסה המשפחה סביב שולחן אחד וייסדה את קופת ״עוד ישמע״, כדי שאף מחותן במשפחה לא יעמוד לבד מול החופה. בלי עשירים גדולים ובלי קרנות: כל בית בהוראת קבע לפי יכולתו, שקל אחר שקל.</p>
+  </header>
+
+  <div class="start">
+    <div class="t"><b>כך זה נראה עד היום</b>הוראות קבע צנועות מכל בתי המשפחה, שהצטברו לסכום של</div>
+    <div class="v">כ־<span class="num">2,100</span> ₪<small>בחודש, בממוצע</small></div>
+  </div>
+
+  <div class="grid">
+    <div><b><span class="num">152,599</span><em>₪</em></b><span>נכנסו לקופה בשש שנים</span></div>
+    <div class="hl"><b><span class="num">150,000</span><em>₪</em></b><span>חולקו לשמחות המשפחה</span></div>
+    <div><b><span class="num">15</span></b><span>חתונות, <span class="num">10,000</span> ₪ לכל חתונה</span></div>
+    <div><b><span class="num">500</span><em>₪</em></b><span>בלבד הוצאות, <span class="num">0.3%</span></span></div>
+    <div class="hl"><b><span class="num">98.3%</span></b><span>מכל שקל שנכנס יצא ישירות לשמחות</span></div>
+    <div><b><span class="num">25,433</span><em>₪</em></b><span>נכנסו בממוצע בכל שנה</span></div>
+    <div><b>כל <span class="num">5</span></b><span>חודשים בערך, עוד חתונה במשפחה</span></div>
+    <div><b><span class="num">16</span></b><span>שותפים שנתנו מכספם</span></div>
+    <div class="hl"><b><span class="num">8</span></b><span>שותפים מעל <span class="num">12,000</span> ₪, כ־<span class="num">80%</span> מהתרומות</span></div>
+  </div>
+
+  <div class="honor">
+    <h3>היכל הכבוד</h3>
+    <ol>
+      <li><i>1</i><span>יענקי</span><b><span class="num">18,000</span> ₪</b></li>
+      <li><i>2</i><span>יוסף פויגל</span><b><span class="num">16,500</span> ₪</b></li>
+      <li><i>3</i><span>שלמה לוי</span><b><span class="num">15,550</span> ₪</b></li>
+      <li><i>4</i><span>יוסף אריה</span><b><span class="num">14,750</span> ₪</b></li>
+      <li><i>5</i><span>מוישי</span><b><span class="num">14,600</span> ₪</b></li>
+      <li><i>5</i><span>יהודלה</span><b><span class="num">14,600</span> ₪</b></li>
+      <li><i>7</i><span>אברמי</span><b><span class="num">14,300</span> ₪</b></li>
+      <li><i>8</i><span>ראש משפחתינו</span><b><span class="num">12,600</span> ₪</b></li>
+      <li><i>9</i><span>יהושע דוד</span><b><span class="num">6,790</span> ₪</b></li>
+      <li><i>10</i><span>שלמה</span><b><span class="num">6,581</span> ₪</b></li>
+    </ol>
+  </div>
+
+  <div class="rings"><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg viewBox="0 0 20 24"><path d="M10 0.5 12.4 3.2 10 5.9 7.6 3.2Z" fill="currentColor"/><circle cx="10" cy="14.5" r="7.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+  <div class="foot"><span class="num">15</span> משפחות הגיעו לחופה בראש מורם<small>ובכל אחת מהן הייתה המשפחה כולה שותפה</small></div>
+</section>
+
+<!-- ================= PAGE 4 · THE FUTURE ================= -->
+<section class="page future">
+  <div class="bsd">בס״ד</div>
+  <div class="top">
+    <header>
+      <div class="kicker">החתונה ה־16 כבר בדרך</div>
+      <h2>החשבון לעתיד</h2>
+    </header>
+
+    <div class="calc">
+      <div class="ln"><span><span class="num">16</span> בני המשפחה מוסיפים <span class="num">101</span> ₪ בחודש על הקיים</span><b><span class="num">1,616</span> ₪</b></div>
+      <div class="ln"><span>עוד <span class="num">15</span> נכדים בהוראת קבע חדשה של <span class="num">200</span> ₪</span><b><span class="num">3,000</span> ₪</b></div>
+      <div class="ln sum"><span>יחד, בכל חודש</span><b><span class="num">4,616</span> ₪</b></div>
+    </div>
+
+    <div class="leap">
+      <div><b>כ־<span class="num">2,100</span> ₪</b><span>בחודש, עד היום</span></div>
+      <div class="arrow">←</div>
+      <div><b>כ־<span class="num">6,700</span> ₪</b><span>בחודש, עם התוספת</span></div>
+    </div>
+
+    <div class="goal">
+      <p>מה היעד?</p>
+      <b>לפחות <em><span class="num">4,000</span> ₪</em> בחודש</b>
+      <p>נוספים לקופה, בתוספת לקיים</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan"><i>תכנית א׳</i><b><span class="num">600</span> ₪ לכל שמחת הולדת בן או בת</b><span>להוצאות הקידוש או הברית</span></div>
+      <div class="plan"><i>תכנית ב׳</i><b>הגדלת סכום התמיכה לחתונה</b><span>יותר עזרה לכל מחותן במשפחה</span></div>
+      <div class="plan"><i>תכנית ג׳</i><b>תמיכה בהלוואות קטנות</b><span>יד מושטת לבני המשפחה בעת הצורך</span></div>
+    </div>
+
+    <p class="records">וביחד נשבור שיאים חדשים!</p>
+  </div>
+
+  <div class="sponsor">
+    <div class="kicker">התודה והברכה לנותני החסות לערב זה</div>
+    <img src="bashi-logo.png" alt="BASHI, באשי עיצוב ארועי יוקרה">
+    <p>על הלב, הנשמה והמימון הנדיב, ועל כל העיצוב והאוכל של הערב ברמה הגבוהה ביותר</p>
+    <div class="tel"><small>להזמנות</small><span class="num">052-766-2628</span></div>
+  </div>
+</section>
+
+</body>
+</html>
