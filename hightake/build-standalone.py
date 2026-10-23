@@ -2,7 +2,7 @@
 import base64, json, re, pathlib
 here = pathlib.Path(__file__).parent
 s = (here / 'index.html').read_text(encoding='utf-8')
-MIME = {'.png': 'image/png', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.webp': 'image/webp'}
+MIME = {'.png': 'image/png', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.webm': 'video/webm'}
 def uri(rel):
     p = here / rel
     return 'data:%s;base64,%s' % (MIME[p.suffix], base64.b64encode(p.read_bytes()).decode())
