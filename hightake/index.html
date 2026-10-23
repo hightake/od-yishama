@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>תודה ל־HIGHTAKE</title>
+<title>HIGHTAKE בחסות</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;500;700;900&family=Assistant:wght@300;400;600;700;800&display=swap">
@@ -41,6 +41,9 @@ body{margin:0;background:var(--night);color:var(--ivory);font-family:var(--body)
 .sub{font-weight:300;color:var(--ivory);font-size:clamp(18px,3.8vmin,46px);line-height:1.45;max-width:38ch;text-wrap:balance;margin:0}
 .gold{color:var(--gold-hi)}
 .coral{color:var(--coral)}
+.contact{display:flex;align-items:baseline;gap:2.4vmin}
+.contact > span{font-weight:700;font-size:clamp(16px,3.4vmin,40px);color:var(--muted)}
+.contact b{font-family:var(--display);font-weight:900;font-size:clamp(30px,8vmin,96px);color:var(--gold-hi);letter-spacing:.02em}
 .rule{width:min(320px,50vw);height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .brand{font-family:"Assistant",sans-serif;font-weight:800;letter-spacing:.04em;direction:ltr;unicode-bidi:isolate;display:inline-block}
 .brand i{font-style:normal;color:var(--coral)}
@@ -122,21 +125,13 @@ body{margin:0;background:var(--night);color:var(--ivory);font-family:var(--body)
 <div id="stage">
   <canvas id="dust" aria-hidden="true"></canvas>
 
-  <!-- 1 -->
-  <section class="scene" data-t="7">
-    <div class="wrap">
-      <p class="sub r" style="--d:.4s">ומאחורי כל מסך שראיתם הערב,</p>
-      <p class="sub r" style="--d:2s">המצגות, הסרטונים, הפרסומים ומערכת ההתרמה,<br>עומדת <span class="gold">עבודה מקצועית, שקטה ומדויקת</span>.</p>
-    </div>
-  </section>
-
-  <!-- 2 -->
+  <!-- 1: sponsor greeting -->
   <section class="scene" data-t="10">
     <div class="wrap">
-      <h1 class="h1 r" style="--d:.4s">התודה והברכה</h1>
-      <div class="rule r" style="--d:1.6s"></div>
-      <div class="tologo r" style="--d:2s"><span>ל־</span><img src="img/hightake-logo.png" alt="HIGHTAKE"></div>
-      <p class="sub r" style="--d:3.4s">על הפקת המצגות והסרטונים, עיצוב חומרי הדפוס והמיתוג,<br>ופיתוח מערכת ההתרמה הדיגיטלית של הערב</p>
+      <div class="eyebrow r" style="--d:.3s">בשמחה ובהערכה רבה</div>
+      <h2 class="h2 r" style="--d:1s">שמחנו לתת חסות<br>לכבוד ערב מיוחד זה</h2>
+      <div class="rule r" style="--d:2.6s"></div>
+      <p class="sub r" style="--d:3.2s">בהערכה רבה למשפחה ולקופת ״עוד ישמע״,<br><span class="gold">ובברכת הצלחה רבה בהתרמה!</span></p>
     </div>
   </section>
 
@@ -187,7 +182,7 @@ body{margin:0;background:var(--night);color:var(--ivory);font-family:var(--body)
     <div class="wrap">
       <div class="lockup"><img class="logoimg" src="img/hightake-logo.png" alt="HIGHTAKE, אתרים, מערכות, פתרונות. בדיוק כמו שצריך"></div>
       <div class="rule r" style="--d:2.4s"></div>
-      <p class="sub r" style="--d:2.8s">תודה מכל המשפחה</p>
+      <div class="contact r" style="--d:2.8s"><span>ליצירת קשר</span><b><span class="num">053-310-6157</span></b></div>
     </div>
   </section>
 </div>
@@ -195,7 +190,7 @@ body{margin:0;background:var(--night);color:var(--ivory);font-family:var(--body)
 <div id="intro">
   <div class="wrap">
     <img src="img/hightake-logo.png" alt="HIGHTAKE">
-    <p class="sub">התודה והברכה</p>
+    <p class="sub">שמחנו לתת חסות לכבוד ערב מיוחד זה</p>
     <button id="go" type="button">התחלת המצגת</button>
     <div class="hint">רווח / חצים למעבר · P להשהיה · F למסך מלא</div>
   </div>
@@ -206,7 +201,7 @@ body{margin:0;background:var(--night);color:var(--ivory);font-family:var(--body)
   <button id="prev" type="button" aria-label="הקודם">›</button>
   <button id="play" type="button" aria-label="השהיה">❚❚</button>
   <button id="next" type="button" aria-label="הבא">‹</button>
-  <span id="count">1 / 7</span>
+  <span id="count">1 / 6</span>
   <button id="fs" type="button" aria-label="מסך מלא">⛶</button>
 </nav>
 
