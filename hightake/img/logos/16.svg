@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 384.1 120.6" style="enable-background:new 0 0 384.1 120.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#FF335F;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill:url(#SVGID_2_);}
+	.st4{fill:#601BF3;}
+	.st5{fill:#B300D6;}
+</style>
+<rect class="st0" width="384.1" height="120.6"/>
+<g>
+	<circle class="st1" cx="273.1" cy="75.9" r="6.9"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="272.9104" y1="125.9344" x2="273.2178" y2="82.276">
+		<stop  offset="0" style="stop-color:#601BF3"/>
+		<stop  offset="0.1534" style="stop-color:#721EE2"/>
+		<stop  offset="0.4607" style="stop-color:#A025B7"/>
+		<stop  offset="0.89" style="stop-color:#EB3072"/>
+		<stop  offset="1" style="stop-color:#FF335F"/>
+	</linearGradient>
+	<circle class="st2" cx="273.1" cy="96" r="7.2"/>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="34.079" y1="40.0686" x2="22.6644" y2="12.5564">
+		<stop  offset="0" style="stop-color:#601BF3"/>
+		<stop  offset="0.2442" style="stop-color:#721EE3"/>
+		<stop  offset="0.5708" style="stop-color:#9022C7"/>
+		<stop  offset="0.7595" style="stop-color:#BE299C"/>
+		<stop  offset="1" style="stop-color:#FF335F"/>
+	</linearGradient>
+	<circle class="st3" cx="28.6" cy="26.9" r="7.2"/>
+	<path class="st4" d="M21.8,73V47.7h13.8V73c0,14.4,5.6,20.2,19.4,20.2c13.5,0,19.3-5.8,19.3-20.2V19.7H88V73
+		c0,21.3-10.7,30.5-33,30.5C32.5,103.6,21.8,94.3,21.8,73z"/>
+	<path class="st4" d="M155.7,102.9L134,68.5l-21.6,34.3H97l29.4-44l-26-39.2h15.3L134,49.5l18.4-29.8h15.3l-26.1,39.2l29.5,44H155.7
+		z"/>
+	<path class="st5" d="M181.4,73V19.7h13.8V73c0,14.4,5.6,20.2,19.4,20.2c13.5,0,19.3-5.8,19.3-20.2V19.7h13.8V73
+		c0,21.3-10.7,30.5-33,30.5C192.1,103.6,181.4,94.3,181.4,73z"/>
+	<path class="st1" d="M266.2,19.7H280v56.2h-13.8V19.7z"/>
+	<circle class="st4" cx="28.7" cy="47.8" r="6.9"/>
+	<path class="st1" d="M364.8,50.2v53.4H351V50.2c0-14.4-5.6-20.2-19.4-20.2c-13.5,0-19.3,5.8-19.3,20.2v53.4h-13.8V50.2
+		c0-21.3,10.7-30.5,33-30.5C354.1,19.7,364.8,28.9,364.8,50.2z"/>
+</g>
+</svg>
