@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>סיכום ערב עוד ישמע</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: one continuous beat-cut reel (124 bpm) of full-bleed photos, with gold chapter captions and a live counter for the donation climb */
+:root{
+  --night:#0a0911; --gold:#d6b26a; --gold-hi:#f6e3ad; --ivory:#f2ebde; --soft:#cfc4b2;
+  --display:"Frank Ruhl Libre","David","Times New Roman",serif;
+  --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+  color-scheme:dark;
+}
+html,body{height:100%;margin:0}
+body{background:#000;color:var(--ivory);font-family:var(--body);overflow:hidden;direction:rtl}
+*{box-sizing:border-box}
+.num{unicode-bidi:isolate;direction:ltr;display:inline-block}
+#stage{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 40%,#1c1728,var(--night) 70%);overflow:hidden}
+.it{position:absolute;inset:0;opacity:0}
+.ph{background-size:cover;background-position:center}
+.go .ph{animation:kb var(--len) linear var(--at) both}
+@keyframes kb{0%{opacity:0;transform:scale(1.04)}9%{opacity:1}91%{opacity:1}100%{opacity:0;transform:scale(1.13)}}
+.ph:nth-of-type(odd){transform-origin:35% 45%} .ph:nth-of-type(even){transform-origin:65% 55%}
+.it video{width:100%;height:100%;object-fit:cover;display:block}
+.go .vid{animation:fade var(--len) linear var(--at) both}
+@keyframes fade{0%{opacity:0}7%{opacity:1}93%{opacity:1}100%{opacity:0}}
+.shade{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.55) 100%),linear-gradient(0deg,rgba(0,0,0,.55),transparent 32%);z-index:5}
+
+/* overlays */
+.ov{position:absolute;z-index:8;opacity:0;pointer-events:none}
+.go .ov{animation:txt var(--len) cubic-bezier(.2,.7,.2,1) var(--at) both}
+@keyframes txt{0%{opacity:0;transform:translateY(2.5vmin);filter:blur(6px)}12%{opacity:1;transform:none;filter:none}88%{opacity:1}100%{opacity:0}}
+.chapter{right:6vw;bottom:9vh;display:flex;flex-direction:column;align-items:flex-start;gap:1vmin}
+.chapter i{width:9vmin;height:.6vmin;background:var(--gold)}
+.chapter b{font-family:var(--display);font-weight:900;font-size:clamp(32px,8.5vmin,110px);line-height:1;color:#fff;text-shadow:0 .5vmin 3vmin rgba(0,0,0,.7)}
+.chapter span{font-weight:700;font-size:clamp(16px,3.2vmin,40px);color:var(--gold-hi);text-shadow:0 .3vmin 2vmin rgba(0,0,0,.8)}
+.card{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.4vmin;text-align:center;
+  background:radial-gradient(ellipse at 50% 40%,#231c33,var(--night) 72%);padding:0 6vw}
+.card .logo{width:min(560px,40vw);filter:drop-shadow(0 0 3vmin rgba(214,178,106,.3))}
+.card .k{font-weight:800;letter-spacing:.2em;color:var(--gold);font-size:clamp(16px,3.4vmin,40px)}
+.card h1{font-family:var(--display);font-weight:900;font-size:clamp(40px,11vmin,140px);line-height:1.05;margin:0;color:var(--gold-hi);text-shadow:0 .5vmin 0 #8a6a2c}
+.card h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,6.4vmin,80px);line-height:1.2;margin:0;color:var(--ivory)}
+.card p{margin:0;font-size:clamp(18px,3.8vmin,46px);color:var(--soft);line-height:1.4}
+.card .motto{font-family:var(--display);font-weight:900;font-size:clamp(34px,9vmin,118px);line-height:1.2;color:var(--gold-hi);text-shadow:0 .5vmin 0 #8a6a2c,0 0 5vmin rgba(214,178,106,.3)}
+.sign{left:50%;top:44%;transform:translate(-50%,-50%);text-align:center}
+.go .sign{animation:stamp var(--len) cubic-bezier(.2,1.4,.4,1) var(--at) both}
+@keyframes stamp{0%{opacity:0;transform:translate(-50%,-50%) scale(1.6)}14%{opacity:1;transform:translate(-50%,-50%) scale(1)}86%{opacity:1}100%{opacity:0}}
+.sign b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(44px,13vmin,170px);color:var(--gold-hi);text-shadow:0 .6vmin 0 #8a6a2c,0 0 6vmin rgba(0,0,0,.9);white-space:nowrap}
+.sign span{font-weight:800;font-size:clamp(18px,4vmin,50px);color:#fff;text-shadow:0 .3vmin 2vmin #000}
+.counter{left:50%;top:5vh;transform:translateX(-50%);background:rgba(10,9,17,.82);border:.25vmin solid var(--gold);border-radius:2vmin;padding:1.4vmin 4vmin;text-align:center;box-shadow:0 2vmin 5vmin rgba(0,0,0,.6)}
+.counter small{display:block;font-weight:800;letter-spacing:.16em;color:var(--gold);font-size:clamp(12px,2.4vmin,28px)}
+.counter b{font-family:var(--display);font-weight:900;font-size:clamp(36px,9vmin,112px);line-height:1;color:var(--gold-hi)}
+.counter b em{font-style:normal;font-size:.42em;margin-inline-start:1.4vmin;color:var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3vmin;width:min(1500px,92vw);margin-top:2vmin}
+.stats div{border-top:.4vmin solid var(--gold);padding-top:2vmin;display:flex;flex-direction:column;gap:1vmin}
+.stats b{font-family:var(--display);font-weight:900;font-size:clamp(30px,8vmin,100px);color:var(--ivory);line-height:1}
+.stats div > span{font-size:clamp(14px,2.8vmin,34px);color:var(--soft)}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(60px,19vmin,240px);line-height:1;color:var(--gold-hi);text-shadow:0 .7vmin 0 #8a6a2c,0 0 6vmin rgba(214,178,106,.3)}
+.big em{font-style:normal;font-size:.36em;color:var(--gold);margin-inline-start:2vmin;text-shadow:none}
+
+#start{position:fixed;inset:0;z-index:30;display:grid;place-items:center;background:radial-gradient(ellipse at center,#1c1728,var(--night) 75%);transition:opacity .8s}
+#start.gone{opacity:0;pointer-events:none}
+#start button{font:800 clamp(16px,2.8vmin,28px) var(--body);color:var(--night);background:linear-gradient(180deg,var(--gold-hi),var(--gold));border:0;border-radius:999px;padding:.8em 2.4em;cursor:pointer}
+#start button:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.go .ph{animation-name:fade}}
+</style>
+</head>
+<body>
+<div id="stage"><div id="reel"></div><div class="shade"></div></div>
+<div id="start"><button id="play" type="button">הפעלת הסרטון</button></div>
+<script>
+(function(){
+  const B = 60 / 124;                 // one beat at 124 bpm
+  const S = 3 * B;                    // photo step: three beats
+  const reel = document.getElementById('reel');
+  let t = 0;
+  const items = [];
+  const add = (cls, html, at, len, extra) => { items.push({cls, html, at, len, extra}); };
+  const photo = (n, len = S) => { add('it ph', '', t, len + .3, {bg: 'img/' + n + '.jpg'}); t += len; };
+  const clip = (name, len) => { add('it vid', `<video src="img/clip-${name}.webm" muted playsinline preload="auto" data-at="${t}"></video>`, t, len + .3); t += len; };
+  const card = (html, len) => { add('ov card', html, t, len + .3); t += len; };
+  const chapter = (title, sub, at, len = 2 * S) => add('ov chapter', `<i></i><b>${title}</b>${sub ? `<span>${sub}</span>` : ''}`, at, len);
+
+  card(`<img class="logo" src="img/od-logo.png" alt="קופת עוד ישמע"><div class="k">דינר שש שנים</div><h2>ערב של שמחה, נתינה ושותפות</h2>`, 12 * B);
+
+  chapter('ההכנות', 'כל פרט במקומו', t);
+  [9599, 9603].forEach(n => photo(n));
+  photo(9601, 2 * S);
+
+  chapter('השולחן ערוך', 'ברמה של אירוע מלכותי', t);
+  [9604, 9605, 9609, 9613, 9614].forEach(n => photo(n));
+  clip('table', 9 * B);
+  [9618, 9620, 9621, 9623, 9665, 9666].forEach(n => photo(n));
+  photo(9617, 2 * S);
+
+  chapter('המשפחה מתכנסת', 'שולחן אחד, לב אחד', t);
+  [9636, 9637, 9639].forEach(n => photo(n));
+  clip('meal', 9 * B);
+  [9642, 9644, 9645, 9648, 9650, 9664].forEach(n => photo(n));
+
+  chapter('דברי חיזוק', '', t);
+  photo(9653, 2 * S); photo(9659, 2 * S);
+  clip('speech', 10 * B);
+
+  chapter('רגע ההתרמה', 'השותפים הצטרפו, אחד אחרי השני', t);
+  const climb0 = t;
+  [9668, 9669, 9670, 9671, 9672, 9673, 9674].forEach(n => photo(n));
+  const goalAt = t;
+  photo(9675, 2 * S);
+  add('ov sign', '<b>היעד נשבר!</b><span>מעל <span class="num">4,000</span> ₪ לחודש</span>', goalAt, 2 * S);
+  [9676, 9679, 9680].forEach(n => photo(n));
+  photo(9682, 2 * S);
+  const climb1 = t;
+
+  card(`<div class="k">סיכום הערב</div><div class="big"><span class="num">6,276</span><em>₪ לחודש</em></div>
+    <div class="stats"><div><b><span class="num">157%</span></b><span>מהיעד של 4,000 ₪</span></div><div><b><span class="num">29</span></b><span>שותפים הצטרפו הערב</span></div><div><b><span class="num">75,312</span> ₪</b><span>בשנה לשמחות המשפחה</span></div></div>`, 18 * B);
+  card(`<h2>תודה לכל השותפים,<br>לנותני החסות ולכל מי שנתן יד</h2><p>יחד הפכנו ערב אחד לשיא חדש</p>`, 9 * B);
+  const end = t;
+  card(`<img class="logo" src="img/od-logo.png" alt="קופת עוד ישמע"><div class="motto">״מיר זענען אלע א חלק<br>פון די שמחה״</div>`, 16 * B);
+  window.__total = t;
+
+  // build DOM
+  reel.innerHTML = items.map(i => `<div class="${i.cls}" style="--at:${i.at.toFixed(3)}s;--len:${i.len.toFixed(3)}s${i.extra && i.extra.bg ? `;background-image:url(${i.extra.bg})` : ''}">${i.html}</div>`).join('');
+
+  // counter follows the photos of the screen: 1,200 at the first, 4,128 at the goal photo, 6,276 at the last
+  const keys = [[climb0, 1200], [goalAt, 4128], [climb1 - 2 * S, 6276]];
+  const fmt = n => Math.round(n).toLocaleString('en-US');
+  function tick(){
+    const st = (performance.now() - window.__sceneT0) / 1000; const el = document.getElementById('cnt');
+    if (el) {
+      let v = keys[0][1];
+      for (let k = 0; k < keys.length - 1; k++) { const [a, va] = keys[k], [b, vb] = keys[k + 1]; if (st >= a) v = st >= b ? vb : va + (vb - va) * ((st - a) / (b - a)); }
+      el.textContent = fmt(v);
+    }
+    if (st < window.__total) requestAnimationFrame(tick);
+  }
+  function startVideos(){
+    if (window.__RENDER) return;
+    document.querySelectorAll('video').forEach(v => setTimeout(() => { v.currentTime = 0; v.play().catch(() => {}); }, (+v.dataset.at) * 1000));
+  }
+  window.__start = () => { window.__sceneT0 = performance.now(); document.getElementById('stage').classList.add('go', 'scene', 'active'); startVideos(); requestAnimationFrame(tick); };
+  // the renderer clicks #go; a viewer clicks the play button
+  const go = document.createElement('button'); go.id = 'go'; go.hidden = true; go.onclick = () => { document.getElementById('start').classList.add('gone'); window.__start(); }; document.body.appendChild(go);
+  document.getElementById('play').onclick = () => { try { document.documentElement.requestFullscreen().catch(() => {}); } catch (e) {} go.click(); };
+})();
+</script>
+</body>
+</html>
